@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Products />} />
         <Route path='/product/:id' element={<MoreInfo />} />
+        <Route path='/basket' element={<MoreInfo />} />
       </Routes>
     </Layout>
   );
