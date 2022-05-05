@@ -1,0 +1,10 @@
+$header-color : #0046BE;
+$footer-color: #F0F2F4;
+$add-to-basket-button-color: #34CA23;
+$more-info-color: #54C5D0;
+$loading-color: #0046BE;
+@mixin flex($x,$y) {
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+  }

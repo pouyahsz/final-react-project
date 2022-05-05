@@ -1,0 +1,46 @@
+@import '../variable';
+
+div.row{
+    margin: 30px 0;
+}
+.product{
+    div.title{
+        height: 80px;
+    }
+    
+    div.img{
+        img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+    }
+    div.context{
+        padding: 10px;
+        height: 220px;
+    }
+    div.prices{
+        padding: 0 10px;
+        @include flex(flex-start,center);
+        .real-price{
+            text-decoration: line-through;
+            margin-right: 10px;
+            color: red;
+        }
+    }
+    div.buttons{
+        @include flex(flex-start,center);
+        flex-direction: column;
+        button,a{
+            width: 100%;
+            color: white;
+        }
+        .more-info-btn{
+            background-color: $more-info-color;
+        }
+        .add-to-basket-btn{
+            background-color: $add-to-basket-button-color;
+        }
+
+    }
+}

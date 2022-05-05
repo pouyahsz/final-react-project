@@ -1,0 +1,84 @@
+@import "../../variable";
+
+header {
+    padding: 15px 0;
+    background-color: $header-color;
+  div.top-section {
+    
+    @include flex(space-between, center);
+    div.logo {
+      flex-basis: 10%;
+      img {
+        width: 60%;
+      }
+    }
+  }
+  div.menu {
+    flex-basis: 10%;
+    text-align: left;
+  }
+  div.search-box {
+    background-color: white;
+    flex-basis: 40%;
+    border-radius: 8px;
+    .blue-icon{
+        color: $header-color;
+    }
+    input{
+        outline: none;
+        border: 0;
+        width: 90%;
+        padding: 10px 15px;
+        border-radius: 8px;
+    }
+    button{
+        width: 10%;
+    }
+  }
+
+
+  div.right-boxes{
+      flex-basis: 40%;
+      text-align: right;
+      button{
+          margin-left: 20px;
+      }
+  }
+  div.bottom-section{
+    border-top: .7px solid #ffffff45;
+    margin-top: 20px;
+    
+    div.container{
+        @include flex(space-between,center);
+        .items{
+            margin: 0;
+                padding: 0;
+                list-style-type: none;
+                color: white;
+                margin-top: 10px;
+        }
+        div.left-nav{
+            flex-basis: 60%;
+            ul.items{
+                @extend .items;
+                @include flex(flex-start,center);
+                li{
+                    margin-right: 30px;
+                    font-size: .85em;
+                }
+            }
+        }
+        div.right-nav{
+            flex-basis: 40%;
+            ul{
+                @extend .items;
+                @include flex(flex-end,center);
+                li{
+                    margin-left: 25px;
+                    font-size: .85em;
+                }
+            }
+        }
+    }
+  }
+}

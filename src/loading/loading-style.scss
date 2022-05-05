@@ -1,0 +1,33 @@
+@import '../variable';
+
+.loading-background{
+    background-color: #00000038;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    @include flex(center ,center);
+    .loading{
+        border: 5px solid $loading-color;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border-bottom-color: transparent;
+        animation-name: loading;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

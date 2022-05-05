@@ -1,0 +1,17 @@
+@import '../variable';
+
+div.products-item{
+    @include flex (space-between,center);
+    .real-price{
+        text-decoration: line-through;
+        margin-right: 10px;
+        color: red;
+    }
+    button{
+        width: 100%;
+        color: white !important;
+    }
+    .add-to-basket-btn{
+        background-color: $header-color;
+    }
+}
