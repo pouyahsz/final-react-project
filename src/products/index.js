@@ -12,6 +12,7 @@ import { Input } from './input';
 export const Products = () => {
 
     const [products, setProducts] = useState([]);
+    const [allProducts, setALLProducts] = useState([]);
     const [skip, setSkip] = useState(0);
     const [limit, setLimit] = useState(10);
     const [total, setTotal] = useState(100);
@@ -19,18 +20,41 @@ export const Products = () => {
     const [pageNumber, setPageNumber] = useState(0);
     const count = useSelector((state) => state.counter);
     const dispatch = useDispatch();
+    const store = useSelector((state)=>state.filter.filter)
+    const value = useSelector((state) => state.search.search);
     useEffect(() => {
+        setLoadingStatus(true);
         axios
-            .get(`https://dummyjson.com/products/${''}?limit=${limit}&skip=${skip}`)
+            .get(`https://dummyjson.com/products/${store}?limit=${limit}&skip=${skip}`)
             .then(
                 response => {
                     setProducts(response.data.products);
+                    setALLProducts(response.data.products)
                     setLoadingStatus(false)
 
                 }
             )
-    }, [skip, limit])
+    }, [skip, limit,store])
+    useEffect(()=>{
+        if(value===''){
+            setProducts(allProducts);
+        }
+        else{
 
+            let myProducts = [];
+                for(let i = 0;i<products.length;i++){
+                    products[i].title.toLowerCase();
+                    if(products[i].title.search(value.toLowerCase())!==-1){
+                        console.log(myProducts.length)
+                        myProducts.push(products[i])
+                        
+                    }
+                }
+                setProducts(myProducts);
+            
+            }
+        }
+    ,[value])
     return (
         <div>
             <div className='row'>
@@ -38,8 +62,7 @@ export const Products = () => {
                     {loadingStatus ? <Loading /> :
                         <div className="row gy-5 gx-4">
                             {products.map((element) =>
-
-                            (<ProductInfo product={element} />
+                            (<ProductInfo product={element}/>
                             ))}
 
                         </div>
@@ -51,7 +74,7 @@ export const Products = () => {
                         <div className="filter-box-title">
                             <h3>filter</h3>
                         </div>
-                        <Input name="All" state="true"/>
+                        <Input name="all"/>
                         <Input name="smartphones"/>
                         <Input name="laptops"/>
                         <Input name="skincare"/>

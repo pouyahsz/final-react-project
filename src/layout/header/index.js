@@ -1,10 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector,dispatch, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Icon } from '../../icon';
 import logo from '../../images/logo.png';
+import { searchHandler } from '../../redux/searchSlice';
 import './header-style.scss'
 export const Header = () => {
+    const dispatch = useDispatch();
+    const value = useSelector((state) => state.search.search);
     const count = useSelector((state) => state.counter);
     return (
         <header>
@@ -16,7 +19,9 @@ export const Header = () => {
                     <Icon className="fa-solid fa-bars" textContext="Menu" />
                 </div>
                 <div className="search-box">
-                    <input type="text" placeholder='Search-Best-Box' />
+                    <input type="text" placeholder='Search-Best-Box' value={value} onChange={(e)=>{
+                        dispatch(searchHandler(e.target.value))
+                    }}/>
                     <Icon className="fa-solid fa-magnifying-glass blue-icon" textContext="" />
                 </div>
                 <div className="right-boxes">
