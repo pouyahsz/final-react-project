@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Loading } from '../loading';
 import { useSelector, useDispatch } from 'react-redux';
-import {  increment,decrement } from '../redux/counterSlice';
+import { increment, decrement } from '../redux/counterSlice';
 import { Pagination } from '../pagination';
 import './products-style.scss';
+import { ProductInfo } from '../more-info-cart';
+import { Input } from './input';
 
 export const Products = () => {
 
@@ -19,7 +21,7 @@ export const Products = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         axios
-            .get(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`)
+            .get(`https://dummyjson.com/products/${''}?limit=${limit}&skip=${skip}`)
             .then(
                 response => {
                     setProducts(response.data.products);
@@ -31,43 +33,47 @@ export const Products = () => {
 
     return (
         <div>
-            {loadingStatus ? <Loading /> :
-                <div className="row gy-5 gx-4">
-                    {products.map((element) =>
+            <div className='row'>
+                <div className="col-10">
+                    {loadingStatus ? <Loading /> :
+                        <div className="row gy-5 gx-4">
+                            {products.map((element) =>
 
-                    (<div className="product col-12 col-sm-6 col-lg-4" key={element.id}>
-                        <div className="img">
-                            <img src={element.images[0]} alt={element.title} />
+                            (<ProductInfo product={element} />
+                            ))}
+
                         </div>
 
-                        <div className="context">
-                            <div className="title">
-                                <h3>{element.id} - {element.title}</h3>
-                            </div>
-                            <div className="description">
-                                <p>{element.description}</p>
-                            </div>
-                        </div>
-                        <div className="prices">
-                            <div className="real-price">
-                                <p>{element.price} $</p>
-                            </div>
-                            <div className="price-with-discounter">
-                                <p>{element.discountPercentage} $</p>
-                            </div>
-                        </div>
-                        <div className="buttons">
-                            <Link to={`/product/${element.id}`} className="more-info-btn btn mb-2">More info</Link>
-                            <button className="add-to-basket-btn btn" onClick={
-                                ()=> dispatch(increment(element))
-                                
-                            }>add to basket</button>
-                        </div>
-                    </div>
-                    ))}
+                    }
                 </div>
-
-            }
+                <div className="col-2">
+                    <div className="filter-box">
+                        <div className="filter-box-title">
+                            <h3>filter</h3>
+                        </div>
+                        <Input name="All" state="true"/>
+                        <Input name="smartphones"/>
+                        <Input name="laptops"/>
+                        <Input name="skincare"/>
+                        <Input name="groceries"/>
+                        <Input name="home-decoration"/>
+                        <Input name="furniture"/>
+                        <Input name="tops"/>
+                        <Input name="womens-dresses"/>
+                        <Input name="mens-shirts"/>
+                        <Input name="womens-shoes"/>
+                        <Input name="mens-shoes"/>
+                        <Input name="mens-watches"/>
+                        <Input name="womens-watches"/>
+                        <Input name="womens-bags"/>
+                        <Input name="womens-jewellery"/>
+                        <Input name="sunglasses"/>
+                        <Input name="automotive"/>
+                        <Input name="motorcycle"/>
+                        <Input name="lighting"/>
+                    </div>
+                </div>
+            </div>
             <Pagination skip={skip} limit={limit} total={total} pageNumber={pageNumber} setPageNumber={setPageNumber} skipHandler={setSkip} />
         </div>
     )

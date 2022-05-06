@@ -1,8 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { increment } from '../redux/counterSlice'
 
 export const ProductInfo = ({product}) => {
+    const dispatch = useDispatch();
   return (
     
         <div className="product col-12 col-sm-6 col-lg-4" key={product.id}>
@@ -29,7 +31,7 @@ export const ProductInfo = ({product}) => {
                         <div className="buttons">
                             <Link to={`/product/${product.id}`} className="more-info-btn btn mb-2">More info</Link>
                             <button className="add-to-basket-btn btn" onClick={
-                                ()=> dispatchEvent(increment(product))
+                                ()=> dispatch(increment(product))
                                 
                             }>add to basket</button>
                         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Icon } from '../../icon';
 import logo from '../../images/logo.png';
 import './header-style.scss'
@@ -20,7 +21,7 @@ export const Header = () => {
                 </div>
                 <div className="right-boxes">
                     <Icon className="fa-solid fa-location-dot" textContext="Bangor" />
-                    <Icon className="fa-solid fa-cart-shopping" textContext="Cart" badgeContent={count}/>
+                    <Link to='/basket'><Icon className="fa-solid fa-cart-shopping" textContext="Cart" badgeContent={count}/></Link>
                 </div>
             </div>
             <div className="bottom-section">
