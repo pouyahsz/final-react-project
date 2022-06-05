@@ -12,7 +12,9 @@ export const MyBasket = () => {
       {alertStatus?<Alert content="the product was removed" icon="fa-solid fa-circle-exclamation" color="danger"/>:null}
       <div className='row gy-5 gx-4'>
         {store.products.map((element) => (
-          <CartBasket element={element} />
+          <div className='col-12 col-sm-6 col-lg-4' key={element.product.id}>
+            <CartBasket element={element} />
+          </div>
 
         )
         )}

@@ -17,7 +17,7 @@ export const CartBasket = ({ element }) => {
     }, [store])
     return (
 
-        <div className="product col-12 col-sm-6 col-lg-4" key={element.product.id}>
+        <div className="product">
             <div className="img">
                 <img src={element.product.images[0]} alt={element.product.title} />
             </div>
@@ -41,8 +41,13 @@ export const CartBasket = ({ element }) => {
             <div className="count">
                 count :
                 <button className='btn' onClick={() => {
+                    dispatch(changeState());
+                    setTimeout(()=>{
+                        dispatch(changeStatusWithInterval())
+                    },2000)
                     dispatch(decrement(element));
                     setProductCount(productCount - 1);
+                    
                 }}><i className="fa-solid fa-minus"></i></button>
                 <span>{productCount}</span>
                 <button className='btn' onClick={() => {
