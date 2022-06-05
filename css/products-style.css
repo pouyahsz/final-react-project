@@ -1,0 +1,66 @@
+div.row {
+  margin: 30px 0;
+}
+
+.product div.title {
+  height: 80px;
+}
+
+.product div.img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.product div.context {
+  padding: 10px;
+  height: 220px;
+}
+
+.product div.prices {
+  padding: 0 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.product div.prices .real-price {
+  text-decoration: line-through;
+  margin-right: 10px;
+  color: red;
+}
+
+.product div.buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product div.buttons button, .product div.buttons a {
+  width: 100%;
+  color: white;
+}
+
+.product div.buttons .more-info-btn {
+  background-color: #54C5D0;
+}
+
+.product div.buttons .add-to-basket-btn {
+  background-color: #34CA23;
+}
+
+.filter-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.input-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*# sourceMappingURL=products-style.css.map */

@@ -1,0 +1,27 @@
+.button {
+  background-color: transparent;
+  border-width: 0;
+  font-size: 1.3em;
+  color: white;
+}
+
+.button i {
+  margin-right: 4px;
+  position: relative;
+}
+
+.button span.basket-badge {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+  background-color: red;
+  font-size: .6em;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*# sourceMappingURL=icon-style.css.map */

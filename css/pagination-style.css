@@ -1,0 +1,30 @@
+div.pagination {
+  margin: 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.pagination button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cecece;
+  transition: all 0.3s;
+  width: 35px;
+  height: 35px;
+  box-shadow: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.pagination button:hover {
+  background-color: #e8e8e8;
+}
+
+.text-muted {
+  pointer-events: none;
+}
+/*# sourceMappingURL=pagination-style.css.map */

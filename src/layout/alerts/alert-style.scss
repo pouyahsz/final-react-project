@@ -1,0 +1,41 @@
+@import '../../variable';
+.alert-body{
+    position: fixed;
+    top: -100%;
+    right: 50%;
+    transform: translateX(50%);
+    height: 130px;
+    border-radius: 0 0 15px 15px;
+    padding: 0 20px;
+    width: 330px;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 0 3px 1px #00000070;
+    @include flex(center,center);
+    animation-name: alert;
+    animation-duration: .6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    &.decrement{
+        flex-direction: column;
+    }
+    p.increment{
+        color: green;
+    }
+    p.decrement{
+        color: red;
+    }
+    .buttons{
+        width: 100%;
+        text-align: right;
+        margin-top: 10px;
+    }
+}
+@keyframes alert{
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 0;
+    }
+}

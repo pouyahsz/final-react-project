@@ -61,8 +61,11 @@ export const Products = () => {
                 <div className="col-10">
                     {loadingStatus ? <Loading /> :
                         <div className="row gy-5 gx-4">
-                            {products.map((element) =>
-                            (<ProductInfo product={element}/>
+                            {products.map((element,index) =>
+                            (
+                            <div key={index} className=' col-12 col-sm-6 col-lg-4'>
+                                <ProductInfo product={element}/>
+                            </div>
                             ))}
 
                         </div>

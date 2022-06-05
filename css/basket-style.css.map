@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,AAAA,IAAI,CAAA;EACN,UAAU,EAAE,eAAe;CAC9B",
+    "sources": [
+        "../src/basket/basket-style.scss"
+    ],
+    "names": [],
+    "file": "basket-style.css"
+}

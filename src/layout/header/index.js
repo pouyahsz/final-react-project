@@ -13,7 +13,7 @@ export const Header = () => {
         <header>
             <div className="container top-section">
                 <div className="logo">
-                    <a href="https://www.bestbuy.com/"><img src={logo} alt="logo" /></a>
+                    <Link to="/"><img src={logo} alt="logo" /></Link>
                 </div>
                 <div className="menu">
                     <Icon className="fa-solid fa-bars" textContext="Menu" />

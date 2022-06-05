@@ -1,0 +1,21 @@
+div.products-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.products-item .real-price {
+  text-decoration: line-through;
+  margin-right: 10px;
+  color: red;
+}
+
+div.products-item button {
+  width: 100%;
+  color: white !important;
+}
+
+div.products-item .add-to-basket-btn {
+  background-color: #0046BE;
+}
+/*# sourceMappingURL=more-info-style.css.map */

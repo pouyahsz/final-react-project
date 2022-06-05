@@ -2,13 +2,14 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { increment } from '../redux/counterSlice'
+import { changeState,changeStatusWithInterval} from '../redux/incrementAlertSlice'
 
 export const ProductInfo = ({ product }) => {
     const dispatch = useDispatch();
 
     return (
 
-        <div className="product col-12 col-sm-6 col-lg-4" key={product.id}>
+        <div className="product">
             <div className="img">
                 <img src={product.images[0]} alt={product.title} />
             </div>
@@ -32,7 +33,14 @@ export const ProductInfo = ({ product }) => {
             <div className="buttons">
                 <Link to={`/product/${product.id}`} className="more-info-btn btn mb-2">More info</Link>
                 <button className="add-to-basket-btn btn" onClick={
-                    () => dispatch(increment(product))
+                    () => {
+                        dispatch(increment(product));
+                        dispatch(changeState());
+                        setTimeout(()=>{
+                            dispatch(changeStatusWithInterval())
+                        },2000)
+
+                    }
 
                 }>add to basket</button>
             </div>

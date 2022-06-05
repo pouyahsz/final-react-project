@@ -39,7 +39,6 @@ export const counterSlice = createSlice({
                 }
             }
             state.basketItems.total--;
-            console.log(state.basketItems.products.length)
         },
     },
 })

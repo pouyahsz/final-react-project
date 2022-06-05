@@ -19,7 +19,7 @@ export const MoreInfo = () => {
         })
     },[id])
     return (
-        <div className='row products-item'>
+        <div className='row products-item'>          
             <div className="product-image col-12 col-md-6">
                 <img src={product.images?product.images[0]:null} alt={product.title} />
             </div>

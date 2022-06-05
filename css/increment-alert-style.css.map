@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,WAAW,CAAA;EACP,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,CAAC;EACN,KAAK,EAAE,GAAG;EACV,SAAS,EAAE,eAAe;EAC1B,MAAM,EAAE,KAAK;EACb,aAAa,EAAE,aAAa;EAC5B,KAAK,EAAE,KAAK;EACZ,gBAAgB,EAAE,KAAK;EACvB,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,qBAAqB;ECLjC,OAAO,EAAE,IAAI;EACb,eAAe,EDKD,MAAM;ECJpB,WAAW,EDIU,MAAM;CAI9B;;AAfD,AAYI,WAZO,CAYP,CAAC,CAAA;EACG,KAAK,EAAE,KAAK;CACf",
+    "sources": [
+        "../src/layout/alerts/increment-alert-style.scss",
+        "../src/_variable.scss"
+    ],
+    "names": [],
+    "file": "increment-alert-style.css"
+}

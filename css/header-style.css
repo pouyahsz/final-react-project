@@ -1,0 +1,104 @@
+header {
+  padding: 15px 0;
+  background-color: #0046BE;
+}
+
+header div.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header div.top-section div.logo {
+  flex-basis: 10%;
+}
+
+header div.top-section div.logo img {
+  width: 60%;
+}
+
+header div.menu {
+  flex-basis: 10%;
+  text-align: left;
+}
+
+header div.search-box {
+  background-color: white;
+  flex-basis: 40%;
+  border-radius: 8px;
+}
+
+header div.search-box .blue-icon {
+  color: #0046BE;
+}
+
+header div.search-box input {
+  outline: none;
+  border: 0;
+  width: 90%;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+header div.search-box button {
+  width: 10%;
+}
+
+header div.right-boxes {
+  flex-basis: 40%;
+  text-align: right;
+}
+
+header div.right-boxes button {
+  margin-left: 20px;
+}
+
+header div.bottom-section {
+  border-top: .7px solid #ffffff45;
+  margin-top: 20px;
+}
+
+header div.bottom-section div.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header div.bottom-section div.container .items, header div.bottom-section div.container div.left-nav ul.items, header div.bottom-section div.container div.right-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: white;
+  margin-top: 10px;
+}
+
+header div.bottom-section div.container div.left-nav {
+  flex-basis: 60%;
+}
+
+header div.bottom-section div.container div.left-nav ul.items, header div.bottom-section div.container div.left-nav div.right-nav ul, header div.bottom-section div.container div.right-nav div.left-nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header div.bottom-section div.container div.left-nav ul.items li, header div.bottom-section div.container div.left-nav div.right-nav ul li, header div.bottom-section div.container div.right-nav div.left-nav ul li {
+  margin-right: 30px;
+  font-size: .85em;
+}
+
+header div.bottom-section div.container div.right-nav {
+  flex-basis: 40%;
+}
+
+header div.bottom-section div.container div.right-nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header div.bottom-section div.container div.right-nav ul li {
+  margin-left: 25px;
+  font-size: .85em;
+}
+/*# sourceMappingURL=header-style.css.map */
