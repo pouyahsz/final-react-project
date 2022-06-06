@@ -4,16 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addFilters, removeFilters } from '../redux/filterSlice'
 
 export const Input = ({name}) => {
-    useEffect(() => {
-        axios
-            .get(`https://dummyjson.com/products`)
-            .then(
-                response => {
-                    
-
-                }
-            )
-    }, [])
     const dispatch = useDispatch();
     function getProducts(e){
         if(e.target.id !=='all'){

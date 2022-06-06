@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { decrement, increment } from '../redux/counterSlice'
-import { changeState, changeStatusWithInterval } from '../redux/decrementAlertSlice'
+import { changeDecrementState, changeDecrementStatusWithInterval } from '../redux/decrementAlertSlice'
+import { changeState,changeStatusWithInterval } from '../redux/incrementAlertSlice'
 import './basket-style.scss';
 export const CartBasket = ({ element }) => {
     const dispatch = useDispatch();
@@ -51,6 +52,11 @@ export const CartBasket = ({ element }) => {
                 }}><i className="fa-solid fa-minus"></i></button>
                 <span>{productCount}</span>
                 <button className='btn' onClick={() => {
+                    dispatch(changeState());
+                    setTimeout(()=>{
+                        dispatch(changeStatusWithInterval())
+                    },2000)
+                    setProductCount(productCount - 1);
                     dispatch(increment(element.product));
                     setProductCount(productCount + 1);
                 }}><i className="fa-solid fa-plus"></i></button>
@@ -58,9 +64,9 @@ export const CartBasket = ({ element }) => {
             <div className="buttons">
                 <button className="add-to-basket-btn btn" onClick={
                     () => {
-                        dispatch(changeState());
+                        dispatch(changeDecrementState());
                         setTimeout(()=>{
-                            dispatch(changeStatusWithInterval())
+                            dispatch(changeDecrementStatusWithInterval())
                         },2000)
                         dispatch(decrement(element));
                         setProductCount(productCount - 1);

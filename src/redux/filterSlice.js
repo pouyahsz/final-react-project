@@ -11,11 +11,9 @@ export const filterSlice = createSlice({
         addFilters:(state,action)=>{
             
             state.filter = `category/${action.payload}`;
-            console.log(state.filter)
         },
         removeFilters:(state,action)=>{
             state.filter = '';
-            console.log("bye")
         },
     }
 })

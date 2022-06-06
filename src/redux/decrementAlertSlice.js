@@ -6,14 +6,14 @@ export const decrementAlertSlice = createSlice({
         status:false,
     },
     reducers:{
-        changeState: (state)=>{
+        changeDecrementState: (state)=>{
             state.status = true;
         },
-        changeStatusWithInterval:(state)=>{
+        changeDecrementStatusWithInterval:(state)=>{
             state.status = false;
         }
     }
 
 })
-export const {changeState,changeStatusWithInterval} = decrementAlertSlice.actions;
+export const {changeDecrementState,changeDecrementStatusWithInterval} = decrementAlertSlice.actions;
 export default decrementAlertSlice.reducer;
