@@ -55,12 +55,12 @@ export const Products = () => {
                 <div className="col-10">
                     {loadingStatus ? <Loading /> :
                         <div className="row gy-5 gx-4">
-                            {products.map((element, index) =>
+                            {products.length!==0?products.map((element, index) =>
                             (
                                 <div key={index} className=' col-12 col-sm-6 col-lg-4'>
                                     <ProductInfo product={element} />
                                 </div>
-                            ))}
+                            )):<div className='no-items'><p>there are no items <i class="fa-solid fa-exclamation"></i></p></div>}
 
                         </div>
 
